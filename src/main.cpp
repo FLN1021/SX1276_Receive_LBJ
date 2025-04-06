@@ -646,10 +646,6 @@ void setup()
 
     Preferences preferences;
     preferences.begin("wifi-config", false);
-<<<<<<< HEAD
-=======
-    preferences.begin("wifi-config", false);
->>>>>>> 9c69d5e (Added SmartConfig configuration)
 
     String savedSSID = preferences.getString("ssid", "");
     String savedPassword = preferences.getString("password", "");
@@ -696,11 +692,8 @@ void setup()
     Serial.println(WiFi.localIP());
     WiFi.setAutoReconnect(true);
     WiFi.persistent(true);
-<<<<<<< HEAD
     preferences.putString("ssid", WiFi.SSID());
     preferences.putString("password", WiFi.psk());
-=======
->>>>>>> 9c69d5e (Added SmartConfig configuration)
     preferences.end();
 
     if (isConnected())

@@ -3,6 +3,7 @@
 //
 
 #include "networks.hpp"
+
 /* ------------------------------------------------ */
 Preferences preferences;
 ESPTelnet telnet;
@@ -94,7 +95,6 @@ void silentConnect(const char *ssid, const char *password)
     WiFiClass::mode(WIFI_STA);
     WiFi.setAutoReconnect(true);
     WiFi.persistent(true);
-
     preferences.begin("wifi-config", false);
 
     String savedSSID = preferences.getString("ssid", "");
