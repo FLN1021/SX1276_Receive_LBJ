@@ -646,7 +646,6 @@ void setup()
 
     Preferences preferences;
     preferences.begin("wifi-config", false);
-    preferences.begin("wifi-config", false);
 
     String savedSSID = preferences.getString("ssid", "");
     String savedPassword = preferences.getString("password", "");
@@ -693,6 +692,8 @@ void setup()
     Serial.println(WiFi.localIP());
     WiFi.setAutoReconnect(true);
     WiFi.persistent(true);
+    preferences.putString("ssid", WiFi.SSID());
+    preferences.putString("password", WiFi.psk());
     preferences.end();
 
     if (isConnected())
